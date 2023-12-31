@@ -60,4 +60,17 @@ public class MakerController {
                 .build());
         return ResponseEntity.created(new URI("/api/maker/save")).build();
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateMaker(@PathVariable Long id,@RequestBody MakerDTO makerDTO){
+        Optional<Maker> makerOptional = makerService.findById(id);
+
+        if(makerOptional.isPresent()){
+            Maker maker = makerOptional.get();
+            maker.setName(makerDTO.getName());
+            makerService.save(maker);
+            return ResponseEntity.ok("Entry updated");
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
