@@ -4,11 +4,13 @@ import com.application.rest.entities.Product;
 import com.application.rest.persistence.IProductDAO;
 import com.application.rest.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class ProductDAOImpl implements IProductDAO {
 
     @Autowired
