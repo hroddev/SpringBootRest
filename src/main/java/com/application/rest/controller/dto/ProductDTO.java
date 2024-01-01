@@ -1,6 +1,7 @@
 package com.application.rest.controller.dto;
 
 import com.application.rest.entities.Maker;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
