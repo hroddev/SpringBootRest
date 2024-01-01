@@ -73,4 +73,13 @@ public class MakerController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable Long id){
+        if(id != null){
+            makerService.deleteById(id);
+            return ResponseEntity.ok("Entry Deleted");
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }
